@@ -45,7 +45,7 @@ Create a virtual environment and install django
 ```
 python -m venv venv; source venv/bin/activate; pip install django
 ```
-install tkinter for your system
+Install tkinter for your system
 ```
 ex arch linux: sudo pacman -Sy tk
 ex ubuntu: sudo apt install python3-tk
@@ -68,6 +68,7 @@ python main.py
 After running Quick Start above: 
 
 Output from command: ```python main.py```
+
 ![outputex](readmeassets/image.png)
 
 :mortar_board: Django Models
