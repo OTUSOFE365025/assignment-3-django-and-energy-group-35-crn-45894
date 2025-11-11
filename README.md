@@ -1,12 +1,11 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/-cPJVYMd)
 Django ORM Standalone
 =====================
 
 ![Django](https://img.shields.io/badge/Django_ORM-Standalone-blue)
 ![Python](https://img.shields.io/badge/Python-yellow)
 
-Use the database components of Django without having to use the rest of Django (i.e. running a web server)! :tada: A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides. 
-
-With this project template you can write regular python scripts and use Django's excellent ORM functionality with the database backend of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
+**This is part 1 of assignment 3 for SOFE3650 group 35 CRN 45894**
 
 :gear: Requirements
 -------------------
@@ -15,21 +14,38 @@ With this project template you can write regular python scripts and use Django's
 
 :open_file_folder: File Structure
 ---------------------------------
+This project contains the following structure:
 ```
 django-orm/
+├── .github/
+│   └── (GitHub Classroom feedback)
+│
 ├── db/
-│   ├── __init__.py
-│   └── models.py
+│   ├── migrations/
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_rename_product_name_products_name.py
+│   │   └── __init__.py
+│   ├── models.py
+│   └── __init__.py
+│
 ├── main.py
 ├── manage.py
-├── README.md
-└── settings.py
+├── products.csv
+├── db.sqlite3
+├── settings.py
+└── README.md
 ```
 
-__The main.py file is the entry point for the project, and where you start your code. You automatically get access to your models via ```from db.models import *```
-Think of it like a plain old python file, but now with the addition of Django's feature-rich models.__ :smiling_face_with_three_hearts:
-
-__The db/models.py is where you configure your typical Django models.__ There is a toy user model included as a simple example. After running the migrations command in the quick setup below, a db.sqlite3 file will be generated. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. For most applications, sqlite3 will be powerful enough. But if you need to swap databases down the road, you can easily do so, which is one of the benefits of using the Django ORM. 
+- **db/**  
+  - **models.py** – Django models  
+  - **migrations/** – Migration files  
+  - `__init__.py`
+- **main.py** – Runs the program (CSV load + scanner UI)
+- **manage.py** – Django management commands
+- **settings.py** – Django settings
+- **products.csv** – Product data
+- **db.sqlite3** – Database file
+- **README.md** – Documentation
 
 :rocket: Quick Setup
 --------------------
@@ -41,9 +57,14 @@ Create a virtual environment and install django
 ```
 python -m venv venv; source venv/bin/activate; pip install django
 ```
+Install tkinter for your system
+```
+ex arch linux: sudo pacman -Sy tk
+ex ubuntu: sudo apt install python3-tk
+```
 Download this project template from GitHub
 ```
-git clone git@github.com:dancaron/Django-ORM.git; cd Django-ORM
+git clone git@github.com:OTUSOFE365025/assignment-3-django-and-energy-group-35-crn-45894.git; cd assignment-3-django-and-energy-group-35-crn-45894
 ```
 Initialize the database
 ```
@@ -54,35 +75,13 @@ Run the project
 python main.py
 ```
 
-Feel free to send pull requests if you want to improve this project.
-
 :crystal_ball: Example
 ----------------------
 After running Quick Start above: 
 
-Code in db/models.py:
-```
-# Sample User model
-class User(models.Model):
-    name = models.CharField(max_length=50, default='Dan')
-
-    def __str__(self):
-        return self.name
-```
-Code in main.py:
-```
-# Seed a few users in the database
-User.objects.create(name='Dan')
-User.objects.create(name='Robert')
-
-for u in User.objects.all():
-    print(f'ID: {u.id} \tUsername: {u.name}')
-```
 Output from command: ```python main.py```
-```
-ID: 1	Username: Dan
-ID: 2	Username: Robert
-```
+
+![outputex](readmeassets/image.png)
 
 :mortar_board: Django Models
 ----------------------------
