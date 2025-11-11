@@ -7,10 +7,6 @@ Django ORM Standalone
 
 **This is part 1 of assignment 3 for SOFE3650 group 35 CRN 45894**
 
-Use the database components of Django without having to use the rest of Django (i.e. running a web server)! :tada: A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides. 
-
-With this project template you can write regular python scripts and use Django's excellent ORM functionality with the database backend of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
-
 :gear: Requirements
 -------------------
 - Last tested successfully with Python 3.10.4 and Django 5.0.6
@@ -18,21 +14,25 @@ With this project template you can write regular python scripts and use Django's
 
 :open_file_folder: File Structure
 ---------------------------------
-```
-django-orm/
-├── db/
-│   ├── __init__.py
-│   └── models.py
-├── main.py
-├── manage.py
-├── README.md
-└── settings.py
-```
+This project contains the following structure:
 
-__The main.py file is the entry point for the project, and where you start your code. You automatically get access to your models via ```from db.models import *```
-Think of it like a plain old python file, but now with the addition of Django's feature-rich models.__ :smiling_face_with_three_hearts:
+- .github/                  (GitHub Classroom feedback files)
 
-__The db/models.py is where you configure your typical Django models.__ There is a toy user model included as a simple example. After running the migrations command in the quick setup below, a db.sqlite3 file will be generated. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. For most applications, sqlite3 will be powerful enough. But if you need to swap databases down the road, you can easily do so, which is one of the benefits of using the Django ORM. 
+- db/
+  - migrations/             
+      - 0001_initial.py          (initial migration for products + user)
+      - 0002_rename_product_name_products_name.py
+      - __init__.py
+  - models.py                 (Django ORM models)
+  - __init__.py
+
+- .gitignore                  (ignored files list)
+- README.md                   (project overview + setup)
+- db.sqlite3                  (SQLite database created after migrations)
+- main.py                     (entry point; loads CSV + Tkinter UI + ORM queries)
+- manage.py                   (Django management commands)
+- products.csv                (product seed data)
+- settings.py                 (Django configuration)
 
 :rocket: Quick Setup
 --------------------
@@ -66,24 +66,6 @@ python main.py
 ----------------------
 After running Quick Start above: 
 
-Code in db/models.py:
-```
-# Sample User model
-class User(models.Model):
-    name = models.CharField(max_length=50, default='Dan')
-
-    def __str__(self):
-        return self.name
-```
-Code in main.py:
-```
-# Seed a few users in the database
-User.objects.create(name='Dan')
-User.objects.create(name='Robert')
-
-for u in User.objects.all():
-    print(f'ID: {u.id} \tUsername: {u.name}')
-```
 Output from command: ```python main.py```
 ```
 ID: 1	Username: Dan
