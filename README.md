@@ -5,6 +5,8 @@ Django ORM Standalone
 ![Django](https://img.shields.io/badge/Django_ORM-Standalone-blue)
 ![Python](https://img.shields.io/badge/Python-yellow)
 
+**This is part 1 of assignment 3 for SOFE3650 group 35 CRN 45894**
+
 Use the database components of Django without having to use the rest of Django (i.e. running a web server)! :tada: A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides. 
 
 With this project template you can write regular python scripts and use Django's excellent ORM functionality with the database backend of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
@@ -42,9 +44,14 @@ Create a virtual environment and install django
 ```
 python -m venv venv; source venv/bin/activate; pip install django
 ```
+install tkinter for your system
+```
+ex arch linux: sudo pacman -Sy tk
+ex ubuntu: sudo apt install python3-tk
+```
 Download this project template from GitHub
 ```
-git clone git@github.com:dancaron/Django-ORM.git; cd Django-ORM
+git clone git@github.com:OTUSOFE365025/assignment-3-django-and-energy-group-35-crn-45894.git; cd assignment-3-django-and-energy-group-35-crn-45894
 ```
 Initialize the database
 ```
@@ -54,8 +61,6 @@ Run the project
 ```
 python main.py
 ```
-
-Feel free to send pull requests if you want to improve this project.
 
 :crystal_ball: Example
 ----------------------
