@@ -35,6 +35,18 @@ django-orm/
 ├── settings.py
 └── README.md
 ```
+
+- **db/**  
+  - **models.py** – Django models  
+  - **migrations/** – Migration files  
+  - `__init__.py`
+- **main.py** – Runs the program (CSV load + scanner UI)
+- **manage.py** – Django management commands
+- **settings.py** – Django settings
+- **products.csv** – Product data
+- **db.sqlite3** – Database file
+- **README.md** – Documentation
+
 :rocket: Quick Setup
 --------------------
 Create a folder for your project on your local machine
