@@ -15,25 +15,26 @@ Django ORM Standalone
 :open_file_folder: File Structure
 ---------------------------------
 This project contains the following structure:
-
-- .github/                  (GitHub Classroom feedback files)
-
-- db/
-  - migrations/             
-      - 0001_initial.py          (initial migration for products + user)
-      - 0002_rename_product_name_products_name.py
-      - __init__.py
-  - models.py                 (Django ORM models)
-  - __init__.py
-
-- .gitignore                  (ignored files list)
-- README.md                   (project overview + setup)
-- db.sqlite3                  (SQLite database created after migrations)
-- main.py                     (entry point; loads CSV + Tkinter UI + ORM queries)
-- manage.py                   (Django management commands)
-- products.csv                (product seed data)
-- settings.py                 (Django configuration)
-
+```
+django-orm/
+├── .github/
+│   └── (GitHub Classroom feedback)
+│
+├── db/
+│   ├── migrations/
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_rename_product_name_products_name.py
+│   │   └── __init__.py
+│   ├── models.py
+│   └── __init__.py
+│
+├── main.py
+├── manage.py
+├── products.csv
+├── db.sqlite3
+├── settings.py
+└── README.md
+```
 :rocket: Quick Setup
 --------------------
 Create a folder for your project on your local machine
@@ -67,10 +68,7 @@ python main.py
 After running Quick Start above: 
 
 Output from command: ```python main.py```
-```
-ID: 1	Username: Dan
-ID: 2	Username: Robert
-```
+![outputex](readmeassets/image.png)
 
 :mortar_board: Django Models
 ----------------------------
